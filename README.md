@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ColorAIzer
+
+Virtual hair color try-on application powered by AI. See how different hair colors look on you in real-time using your webcam.
+
+## Features
+
+- **Real-time hair color overlay** - Uses MediaPipe for hair segmentation
+- **Custom color picker** - Choose any hair color with adjustable opacity
+- **Capture & compare** - Take snapshots to compare before/after looks
+- **Responsive design** - Works on desktop and mobile devices
+
+## Tech Stack
+
+- [Next.js 16](https://nextjs.org) - React framework
+- [React 19](https://react.dev) - UI library
+- [MediaPipe](https://developers.google.com/mediapipe) - Hair segmentation
+- [Tailwind CSS 4](https://tailwindcss.com) - Styling
+- [TypeScript](https://www.typescriptlang.org) - Type safety
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/coloraizer.git
+cd coloraizer
+
+# Install dependencies
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+1. Allow camera access when prompted
+2. Select a hair color using the color picker or preset swatches
+3. Adjust the opacity slider to control color intensity
+4. Click the capture button to take a snapshot
+5. Compare the original and colored versions side by side
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+coloraizer/
+├── app/
+│   ├── page.tsx        # Main application page
+│   ├── layout.tsx      # Root layout
+│   └── globals.css     # Global styles
+├── components/
+│   ├── WebcamView.tsx      # Webcam feed with hair segmentation
+│   ├── ColorControls.tsx   # Color picker and opacity controls
+│   └── ComparisonView.tsx  # Before/after comparison modal
+└── public/
+    └── ...                 # Static assets
+```
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
